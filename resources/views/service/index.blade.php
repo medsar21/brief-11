@@ -14,11 +14,7 @@
   <!-- Main navigation container -->
   <nav class="flex w-full items-center fixed top-0 start-0 justify-between bg-gray-800 py-4 text-white shadow-lg hover:text-gray-200 focus:text-gray-200 dark:bg-gray-900">
     <div class="flex items-center justify-between px-4">
-      <div>
-        <a class="mx-2 my-1 flex items-center text-white hover:text-white focus:text-white" href="#">
-          <img class="mr-2" src="https://tecdn.b-cdn.net/img/logo/te-transparent-noshadows.webp" style="height: 20px" alt="TE Logo" loading="lazy" />
-        </a>
-      </div>
+
 
       <!-- Hamburger button for mobile view -->
       <button class="block border-0 bg-transparent px-2 text-white hover:no-underline hover:shadow-none focus:no-underline focus:shadow-none focus:outline-none focus:ring-0 dark:text-gray-200 lg:hidden" type="button" data-te-collapse-init data-te-target="#navbarSupportedContent4" aria-controls="navbarSupportedContent4" aria-expanded="false" aria-label="Toggle navigation">
@@ -42,7 +38,7 @@
 
         <div class="flex items-center">
           <div class="text-right">
-            <a href="{{route('service.create')}}" class="inline-flex items-center px-4 py-2 text-sm font-medium text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+            <a href="{{route('service.create')}}" class="inline-flex items-center px-4 py-2 text-sm font-medium text-white bg-grey-700 rounded-lg hover:bg-grey-800 focus:ring-4 focus:outline-none focus:ring-grey-300 dark:bg-grey-600 dark:hover:bg-grey-700 dark:focus:ring-grey-800">
               <i class="fa fa-pencil"></i> Ajouter Service
             </a>
           </div>
@@ -55,7 +51,7 @@
   <div class="flex flex-row flex-wrap md:mx-auto gap-20 justify-center my-4 mt-20">
 
     @foreach ($services as $service)
-    <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+    <div class="max-w-sm bg-blue border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
       <a href="#">
         <!-- <img class="rounded-t-lg" src="https://scontent.fcmn1-1.fna.fbcdn.net/v/t39.30808-6/298876266_470928698372043_4393316596089167024_n.png?_nc_cat=104&ccb=1-7&_nc_sid=783fdb&_nc_ohc=MbQgAGwoB64AX8lTFd7&_nc_ht=scontent.fcmn1-1.fna&oh=00_AfC-JJNA7mtVd-ozygO0EmLgKxEzezh7dg3KRBHqH444Tg&oe=65BE1994" alt="" /> -->
       </a>
@@ -67,21 +63,22 @@
           </h5>
         </a>
         <p class="mb-3 font-normal text-gray-700 dark:text-gray-400 break-words">{{$service->description}}</p>
-        <div class="flex">
+        <div class="pl-40 text-white bg-blue ">
+
+          <p class="text-xl font-bold">
+            {{$service->cost}}</span>
+          </p>
+
+
+        </div>
+        <div class="flex mt-4">
           <a href="#" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-dark bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-red-300 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800">
             {{$service->category}}
             <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
 
             </svg>
           </a>
-          <div class="pl-40 text-white-700 bg-white ">
 
-            <p class="text-xl font-bold">
-              {{$service->cost}}</span>
-            </p>
-
-
-          </div>
 
         </div>
         <p class="mb-3 font-normal p-8 text-gray-700 dark:text-gray-400 break-words">{{$service->contact}}</p>
